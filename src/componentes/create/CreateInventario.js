@@ -9,8 +9,8 @@ export const CreateDate = () => {
         producto: "",
         cantidad_producto: "",
         fecha_vencimiento: "",
-        id_entrada: "", // Asumiendo que id_entrada es el id del agendamiento
-        id_salida: "" // Asumiendo que id_salida es el id del médico
+        id_entrada: "", 
+        id_salida: "" 
     });
 
     const { producto, cantidad_producto, fecha_vencimiento, id_entrada, id_salida } = inventario;
@@ -21,8 +21,8 @@ export const CreateDate = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8086/api/inventario/create", inventario); // Ruta para crear un inventario
-        navigate("/DashboardInventario"); // Redirigir a la página de dashboard de inventario después de crear la cita
+        await axios.post("http://localhost:8086/api/inventario/create", inventario); 
+        navigate("/DashboardInventario");
     };
 
     return (
@@ -48,12 +48,12 @@ export const CreateDate = () => {
                             </div>
                             <br />
                             <div className="form-group">
-                                <label>Id del Agendamiento</label>
+                                <label>Entrada</label>
                                 <input className="form-control" onChange={onInputChange} value={id_entrada} type="number" name="id_entrada" required />
                             </div>
                             <br />
                             <div className="form-group">
-                                <label>Id del Médico</label>
+                                <label>Salida</label>
                                 <input className="form-control" onChange={onInputChange} value={id_salida} type="number" name="id_salida" required />
                             </div>
                             <br />

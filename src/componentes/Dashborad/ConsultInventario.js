@@ -7,8 +7,6 @@ export const ConsulInventario = () => {
     useEffect(() => {
         getInventarios();
     }, []);
-
-    // Función para obtener los inventarios
     const getInventarios = () => {
         axios.get("http://localhost:8086/api/inventario/all")
             .then((response) => {
